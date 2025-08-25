@@ -2,7 +2,7 @@ package edu.practice.day1;
 
 public class Exercise1 {
 
-  public static void main(String[] args) {
+  public void method1() {
     String name = "김자바";
     int age = 25;
     double height = 175.5;

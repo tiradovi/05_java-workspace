@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Exercise5 {
 
-  public static void main(String[] args) {
+  public void method5() {
     Scanner sc = new Scanner(System.in);
     System.out.println("출생년도를 입력하세요: ");
     int birthYear = sc.nextInt();

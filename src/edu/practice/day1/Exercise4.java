@@ -4,8 +4,9 @@ import java.util.Scanner;
 
 public class Exercise4 {
 
-  public static void main(String[] args) {
+  public void method4() {
     Scanner sc = new Scanner(System.in);
+
     System.out.printf("국어 점수 : ");
     int korean = sc.nextInt();
     System.out.printf("영어 점수 : ");

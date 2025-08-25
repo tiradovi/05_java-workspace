@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Exercise2 {
 
-  public static void main(String[] args) {
+  public void method2() {
     Scanner sc = new Scanner(System.in);
     System.out.println("첫 번째 정수 입력: ");
     int num1 = sc.nextInt();

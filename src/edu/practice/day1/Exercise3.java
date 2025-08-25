@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Exercise3 {
 
-  public static void main(String[] args) {
+  public void method3() {
     Scanner sc = new Scanner(System.in);
     System.out.println("섭씨온도를 입력하세요:");
     double celsius = sc.nextDouble();
