@@ -1,3 +1,5 @@
+package edu.variable;
+
 import java.util.Scanner;
 
 public class ScannerEx1 {
