@@ -69,6 +69,20 @@ public class OperatorEx {
 
     String result = isTrue ? "짝수" : "홀수";
     System.out.printf("%d은 %s입니다.", input, result);
+    System.out.println();
 
   }
+
+  public void method4() {
+    Scanner sc = new Scanner(System.in);
+    System.out.println("정수 입력 : ");
+    int input = sc.nextInt();
+
+    boolean isTrue = (input % 2 == 0);
+    boolean isZero = (input == 0);
+    String result = isZero ? "0" : (isTrue ? "짝수" : "홀수");
+
+    System.out.printf("%s 입니다.", result);
+  }
+
 }

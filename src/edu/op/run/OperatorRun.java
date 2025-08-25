@@ -38,5 +38,6 @@ public class OperatorRun {
     op.method1();
     op.method2();
     op.method3();
+    op.method4();
   }
 }
