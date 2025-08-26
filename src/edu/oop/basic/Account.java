@@ -1,7 +1,7 @@
 package edu.oop.basic;
 
 /**
- * 계좌 클래스
+ * 계좌 클래스 추후 DB와 Java를 연결할 변수 명칭을 작성하는 클래스
  */
 public class Account {
   // [캡슐화] : 객체의 속성(필드) 직접 접근을 제한하는 것이 원칙
@@ -10,5 +10,5 @@ public class Account {
   // 속성에 직접 접근할 수 없으므로 간접 접근할 수 있는 기능
   // 속성(값)
 
-  
+
 }
