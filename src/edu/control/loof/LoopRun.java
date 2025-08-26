@@ -6,10 +6,10 @@ package edu.control.loof;
 public class LoopRun {
 
   public static void main(String[] args) {
-    LoopEx loap = new LoopEx();
-    loap.method1();
-    loap.method2();
-    loap.method3();
-    loap.method4();
+    LoopEx loop = new LoopEx();
+    loop.method1();
+    loop.method2();
+    loop.method3();
+    loop.method4();
   }
 }
