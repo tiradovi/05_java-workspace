@@ -30,7 +30,7 @@ public class Exercise4 {
 
     System.out.println();
     System.out.printf("평균: %.2f점 \n", average);
-    System.out.printf("학점: %c", grade);
+    System.out.printf("학점: %c \n", grade);
 
   }
 }
