@@ -14,13 +14,16 @@ public class PracticeRun {
         Practice9 p9 = new Practice9();
         Practice10 p10 = new Practice10();
 
-        // p1.method1();
-        // p2.method2();
-        // p3.method3();
-        // p4.method4();
-        // p5.method5();
-        // p6.method6();
-        // p7.method7();
+        p1.method1();
+        p2.method2();
+        p3.method3();
+        p4.method4();
+        p5.method5();
+        p6.method6();
+        p7.method7();
+        p8.method8();
+        p9.method9();
+        p10.method10();
 
 
     }
