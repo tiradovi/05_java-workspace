@@ -17,9 +17,10 @@ public class LoopRun {
     LoopEx2 loop2 = new LoopEx2();
     loop2.method1();
     */
-    
+
     LoopEx3 loop3 = new LoopEx3();
-    loop3.method1();
+    // loop3.method1();
+    loop3.method2();
 
   }
 }
