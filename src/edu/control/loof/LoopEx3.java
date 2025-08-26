@@ -44,4 +44,73 @@ public class LoopEx3 {
     System.out.println(count);
   }
 
+  /**
+   * 0이 입력될 때까지 정수를 계속 입력받아 입력받은 수의 합계 구하기
+   */
+  public void method3() {
+    int sum = 0;
+    int input = 0;
+    System.out.println("0 입력시 종료");
+    while (true) {
+      System.out.println("정수를 입력하세요");
+      input = sc.nextInt();
+
+      if (input == 0) {
+        break;
+      }
+      sum += input;
+    }
+    System.out.println("정수의 합:" + sum);
+  }
+
+  //do ~ while: 조건식이 뒤에 작성된 while문 최소 1회 반복
+
+  /**
+   * 0이 입력될 때까지 정수를 계속 입력받아 입력받은 수의 합계 구하기
+   */
+  public void method4() {
+    int sum = 0;
+    int input = 0;
+    do {
+      System.out.println("정수를 입력하세요");
+      input = sc.nextInt();
+      sum += input;
+    } while (input != 0);
+    System.out.println("정수의 합 :" + sum);
+  }
+
+  /**
+   * 문자열을 입력받아 i-- 를 활용하여 거꾸로 출력 String.charAt() + for 문 활용
+   */
+  public void method5() {
+    System.out.println("문자열을 입력하세요:");
+    String str = sc.nextLine();
+
+    for (int i = str.length() - 1; i >= 0; i--) {
+      System.out.print(str.charAt(i));
+    }
+    System.out.println();
+  }
+
+  /**
+   * 1~10 사이에 랜덤 숫자를 맞출 때까지 반복 Math.random() 변수 이름 int answer, input, count Math.random() 0.0~1.0까지의
+   * double 소수 타입
+   */
+  public void method6() {
+    int answer = (int) (Math.random() * 10) + 1;
+    int input = 0;
+    int count = 0;
+
+    do {
+      input = sc.nextInt();
+      count++;
+      if (input > answer) {
+        System.out.println("작성한 숫자보다 정답은 작습니다.");
+      } else if (input < answer) {
+        System.out.println("작성한 숫자보다 정답은 큽니다.");
+      } else {
+        System.out.println("정답입니다.");
+      }
+    } while (input != answer);
+  }
 }
