@@ -113,4 +113,44 @@ public class LoopEx3 {
       }
     } while (input != answer);
   }
+
+  /**
+   * 사용자로부터 숫자 하나를 입력받아 그 수의 구구단을 1부터 9까지 출력
+   */
+  public void method7() {
+    System.out.println("정수 입력:");
+    int input = sc.nextInt(); //문자입력시 에러
+    for (int i = 1; i < 10; i++) {
+      System.out.printf("%d * %d = %2d \n", input, i, i * input);
+    }
+    System.out.println();
+  }
+
+  /**
+   * 비밀번호:"java1234" 올바른 비밀번호를 입력할 때까지 입력 입력횟수 5회 초과시 "접속 차단합니다" 메세지 출력후 종료
+   */
+  public void method8() {
+    String checkPassword = "java1234";
+    String input = "";
+    int attempt = 0;
+    do {
+      System.out.printf("시도횟수(%d/5) 비밀번호를 입력하세요\n", attempt);
+      input = sc.nextLine();
+      if (input.equals(checkPassword)) {
+        System.out.println("접속 완료");
+        break;
+      } else {
+        System.out.println("비밀번호 미일치");
+      }
+      if (attempt > 5) {
+        System.out.println("접속 차단합니다.");
+        break;
+      }
+      attempt++;
+    }
+    while (true);
+
+  }
+
+
 }
