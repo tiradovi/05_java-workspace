@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * 루프 기능 설정용 클래스
  */
-public class LoopEx { // <html>과 같이 페이지 내 코드 시작을 나타내는 구문
+public class LoopEx1 { // <html>과 같이 페이지 내 코드 시작을 나타내는 구문
   /** 코드에 대한 설명 작성시 사용하는 주석
    *
    */
@@ -76,6 +76,7 @@ public class LoopEx { // <html>과 같이 페이지 내 코드 시작을 나타�
       System.out.println(i);
     }
   }
+
 }//</html> 과 같이 페이지 내 코드 종료를 나타내는 구문
 
 /*
