@@ -23,6 +23,7 @@ public class Employee {
         this.employeeId = employeeId;
     }
 
+
     // setter
     public void setName(String name) {
         this.name = name;
@@ -112,8 +113,6 @@ public class Employee {
      * 추후에는 속성만 작성해놓은 클래스
      * 속성을 활용한 기능을 작성해놓은 클래스
      * 속성과 기능을 활용해서 실행하는 클래스
-     *
-     *
      */
     public void checkPromotion() {
         if (workYear >= 3) {
@@ -123,4 +122,34 @@ public class Employee {
         }
     }
 
+    /**
+     * 퇴직금 계산(간단 계산: 연봉 X 근무년수)
+     */
+    public void retirement() {
+        int retirement = salary * workYear;
+        System.out.printf("%s님의 예상 퇴직금 : %,d만원(연봉 %,d만원 X 근무년수 %d년)\n", getName(), retirement, getSalary(), getWorkYear());
+
+    }
+
+    /**
+     * 상세정보 출력 기능
+     * 자바 자체에 존재하는 기능
+     *
+     * @return String 문자열 형태로 회사원의 모든 정보를 전달해서 출력
+     * // @Override -> 추후 함께 공부해볼 어노테이션
+     * // @ --> at, 어노테이션
+     */
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "이름='" + name + '\'' +
+                ", 나이=" + age +
+                ", 부서='" + department + '\'' +
+                ", 직급='" + position + '\'' +
+                ", 연봉=" + salary +
+                ", 사원번호='" + employeeId + '\'' +
+                ", 근무년수=" + workYear +
+                '}';
+    }
 }
+
