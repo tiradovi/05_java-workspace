@@ -138,6 +138,18 @@ public class Account {
         this.balance -= amount;
         System.out.printf("%s 계좌에서 %d원 출금 : \n ", accountNumber, amount);
         System.out.println(name + "의 현재 잔액 : " + balance);
+    }
 
+    /*
+    전달 받은 금액을 balance에 누적 후 현재 잔액 출력
+    메서드 : 반환값 존재 X
+    메서드 명칭 : deposit
+    매개변수 : long amount
+    기능 : balance += amount 이용
+
+     */
+    public void deposit(long amount) {
+        balance += amount;
+        System.out.println(name + "의 현재 잔액: " + balance);
     }
 }
