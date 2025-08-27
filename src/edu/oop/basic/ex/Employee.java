@@ -116,9 +116,9 @@ public class Employee {
      */
     public void checkPromotion() {
         if (workYear >= 3) {
-            System.out.printf("%s님은 근무년수 %2d년으로 승진 대상자입니다.", getName(), getWorkYear());
+            System.out.printf("%s님은 근무년수 %2d년으로 승진 대상자입니다.\n", getName(), getWorkYear());
         } else {
-            System.out.printf("%s님은 근무년수 %2d년으로 승진까지 %2d년 더 필요합니다.", getName(), getWorkYear(), 3 - getWorkYear());
+            System.out.printf("%s님은 근무년수 %2d년으로 승진까지 %2d년 더 필요합니다.\n", getName(), getWorkYear(), 3 - getWorkYear());
         }
     }
 
