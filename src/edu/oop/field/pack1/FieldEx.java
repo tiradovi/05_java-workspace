@@ -1,5 +1,12 @@
 package edu.oop.field.pack1;
 
+/**
+ * public : 모든 곳에서 사용가능
+ * protected : 같은 패키지 + 자식클래스에서 사용가능
+ * default : 같은 패키지에서만 사용가능
+ * private : 같은 클래스에서만 사용 가능
+ *
+ */
 public class FieldEx {
     // 필드(Field)
     // - 객체의 속성을 나타냄
