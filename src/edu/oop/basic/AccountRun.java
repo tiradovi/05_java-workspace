@@ -39,5 +39,14 @@ public class AccountRun {
         System.out.println(a1Num);
         System.out.println(a1Password);
 
+        // 필수 생성자를 활용하여 데이터 저장하고 저장된 데이터 확인
+        // 필수 생성자는 Account 클래스에서 활용할 데이터를 외부에서 매개변수 데이터로 필히 넣어줘야하는 매개변수 작성 공간
+        // public        Account(String name,         String accountNumber,   long balance, String password) 순서 일치하는지 확인
+        Account a2 = new Account("김길동", "234-241-424", 5000000, "1234");
+        System.out.println("===== a2 계좌 정보 =====");
+        System.out.println(a2.getName());
+        System.out.println(a2.getAccountNumber());
+        System.out.println(a2.getBalance());
+        System.out.println(a2.getPassword());
     }
 }
