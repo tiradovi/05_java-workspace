@@ -33,6 +33,19 @@ public class GuestHouse {
         System.out.println("=== " + GUESTHOUSE_NAME + " 시스템 시작 ===");
     }
 
+    /**
+     * 값이 변하는지 여부에 따라 초기화 달라짐
+     * 1순위 초기화 : static 변수들로 되어있는 변수 이름이 모두 먼저 초기화
+     * 2순위 초기화 : static {}
+     * public static final String GUESTHOUSE_NAME = "서울 게스트 하우스";
+     * <p>
+     * static {
+     * totalCount = 0;
+     * System.out.println("=== " + GUESTHOUSE_NAME + " 시스템 시작 ===");
+     * }
+     * {} 블록 형태의 경우 여러 줄의 실행문을 포함해서 작성, 복잡한 로직, 시스템 메세지 출력을 포함해야할 경우 사용
+     *
+     */
     // 자동 생성- 기본 생성자
     public GuestHouse() {
     }
