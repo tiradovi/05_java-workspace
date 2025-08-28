@@ -9,6 +9,7 @@ public class Practice5 {
         int choice = 0;
         int dan = 0;
 
+        // """  """ : <pre></pre>
         while (true) {
             System.out.println("=== 구구단 프로그램===");
             System.out.println("1. 특정 단 출력");
@@ -34,11 +35,13 @@ public class Practice5 {
                     }
                     break;
                 case 0:
+                    System.out.print("프로그램 종료");
+                    return;
+                default:
+                    System.out.println("잘못 입력");
                     break;
             }
-            if (choice == 0) {
-                break;
-            }
+
 
         }
     }
