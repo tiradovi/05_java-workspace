@@ -9,7 +9,8 @@ public class StudentService {
     private Scanner sc = new Scanner(System.in);
 
     /**
-     * 메인 메뉴를 제공하는 화면
+     * 메인 메뉴를 제공하는 화면 = html 대신 활용
+     * displayMenu 를 html 화면으로 데이터를 보낸다고 생각
      */
     public void displayMenu() {
         int input;
@@ -46,8 +47,24 @@ public class StudentService {
                     if (select == 1) {
                         System.out.println("이미 학생이 등록되어 있는 번호입니다.");
                     } else {
-                        System.out.println("학생 등록을 시작하겠습니다.");
+                        System.out.println("학생정보가 없어 학생 등록을 시작하겠습니다.");
+                        student2 = createStudent();
                     }
+                    break;
+                case 2:
+                    System.out.println("학생 정보를 확인합니다.");
+                    System.out.println("학생 정보를 확인할 번호를 선택하세요");
+                    System.out.print("1=student1 / 2=student2 :");
+                    select = sc.nextInt();
+                    if (select == 1) {
+//                        System.out.println("학생이름" + student1.getName());
+//                        System.out.println("학생학번" + student1.getStudentNumber());
+//                        System.out.println("학생성별" + student1.getGender());
+                        System.out.println(studentInfo(student1));
+                    } else {
+                        System.out.println(studentInfo(student2));
+                    }
+                    break;
                 case 0:
                     System.out.println("프로그램을 종료합니다.");
                     return;
@@ -55,5 +72,34 @@ public class StudentService {
                     System.out.println("잘못된 번호를 선택하셨습니다.");
             }
         }
+    }
+
+    private Student createStudent() {
+        System.out.print("이름: ");
+        String createName = sc.next();
+        System.out.print("학번: ");
+        int createNumber = sc.nextInt();
+        System.out.print("성별(남/여): ");
+        String createGender = sc.next();
+        // sc.next().charAt(0); sc.next()로 입력받은 문자열 중에서
+        // 0번째 인덱스 문자를 createGender에 삽입
+        return new Student(createName, createNumber, createGender);
+    }
+
+    /**
+     * 매개 변수로 전달 받은 학생의 정보를 문자열로 만들어 반환
+     *
+     * @param student : std1 또는 std2같은 데이터가 들어올 자리
+     * @return private void studentInform(Student student){
+     * <p>
+     * }
+     */
+    private String studentInfo(Student student) {
+        // String.format("패턴" 변수)
+        // - 패턴 모양의 문자열을 반환하는 String 메서드
+
+
+        String studentInfo = String.format("%s/%s/%c", student.getName(), student.getStudentNumber(), student.getGender());
+        return studentInfo;
     }
 }
