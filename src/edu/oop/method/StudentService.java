@@ -65,6 +65,22 @@ public class StudentService {
                         System.out.println(studentInfo(student2));
                     }
                     break;
+                case 3:
+                    System.out.println("이름 수정");
+                    System.out.print("1=student1 / 2=student2 :");
+                    select = sc.nextInt();
+                    if (select == 1) updateStudentName(student1);
+                    else updateStudentName(student2);
+
+                    break;
+                case 4:
+                    System.out.println("자바 역량 수정");
+                    System.out.print("1=student1 / 2=student2 :");
+                    select = sc.nextInt();
+                    if (select == 1) updateJava(student1);
+                    else updateJava(student2);
+
+                    break;
                 case 0:
                     System.out.println("프로그램을 종료합니다.");
                     return;
@@ -73,6 +89,7 @@ public class StudentService {
             }
         }
     }
+
 
     private Student createStudent() {
         System.out.print("이름: ");
@@ -101,5 +118,47 @@ public class StudentService {
 
         String studentInfo = String.format("%s/%s/%c", student.getName(), student.getStudentNumber(), student.getGender());
         return studentInfo;
+    }
+
+    // 보통 수정, 삭제 작업은 void 형태
+
+    /**
+     *
+     * @param student : student1,student2 (학생정보 가져옴)
+     *                수정 완료후 studentInfo에서 수정된 내용이 조회됨
+     *                수정 실패시 studentInfo에서 수정되기 전 내용 조회
+     */
+    private void updateStudentName(Student student) {
+        System.out.println("수정할 이름");
+        String newName = sc.next();
+
+        //새이름 세팅
+        student.setName(newName);
+        System.out.println("이름 수정 완료");
+    }
+
+    /**
+     * Java 역량이 얼마나 증가 감소했는지 정수로 입력
+     * 학생의 Java 역량을 관리자가 수정
+     * 수정된 역량은 최대 최소를 넘지 못해야함
+     *
+     * @param student
+     */
+    private void updateJava(Student student) {
+        System.out.println("증가 또는 감소한 Java의 역량 입력:");
+        int newJava = sc.nextInt();
+        int beforeJava = student.getJava();
+        int result = beforeJava + newJava;
+
+        while (result > Student.MAX_VALUE || result < Student.MIN_VALUE) {
+            System.out.println("최대 점수는 100점입니다. 최소 점수는 0점입니다");
+
+            System.out.println("현재 점수 :" + student.getJava() + "/ 최종결과" + result);
+
+            System.out.print("점수를 다시 입력하세요");
+            newJava = sc.nextInt();
+            result = beforeJava + newJava;
+        }
+        student.setJava(result);
     }
 }
