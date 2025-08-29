@@ -49,6 +49,7 @@ public class StudentService {
                     } else {
                         System.out.println("학생정보가 없어 학생 등록을 시작하겠습니다.");
                         student2 = createStudent();
+                        // student2 = new Student(createName, createNumber, createGender) // return으로 가져올 아래 생성자 객체대신 기능명칭 작성
                     }
                     break;
                 case 2:
@@ -80,6 +81,20 @@ public class StudentService {
                     if (select == 1) updateJava(student1);
                     else updateJava(student2);
 
+                    break;
+                case 5:
+                    System.out.println("html 역량 수정");
+                    System.out.print("1=student1 / 2=student2 :");
+                    select = sc.nextInt();
+                    if (select == 1) updateHtml(student1);
+                    else updateHtml(student2);
+
+                    break;
+                case 6:
+                    System.out.println(compareJava(student1, student2));
+                    break;
+                case 7:
+                    System.out.println(compareHtml(student1, student2));
                     break;
                 case 0:
                     System.out.println("프로그램을 종료합니다.");
@@ -116,7 +131,7 @@ public class StudentService {
         // - 패턴 모양의 문자열을 반환하는 String 메서드
 
 
-        String studentInfo = String.format("%s/%s/%c", student.getName(), student.getStudentNumber(), student.getGender());
+        String studentInfo = String.format("학생이름: %s\n학생번호: %s\n학생성별: %c\n자바실력: %d\nHTML실력: %d\n", student.getName(), student.getStudentNumber(), student.getGender(), student.getJava(), student.getHtml());
         return studentInfo;
     }
 
@@ -160,5 +175,58 @@ public class StudentService {
             result = beforeJava + newJava;
         }
         student.setJava(result);
+    }
+
+    /**
+     * Html 역량이 얼마나 증가 감소했는지 정수로 입력
+     * 학생의 Html 역량을 관리자가 수정
+     * 수정된 역량은 최대 최소를 넘지 못해야함
+     *
+     * @param student
+     */
+    private void updateHtml(Student student) {
+        System.out.println("증가 또는 감소한 Html의 역량 입력:");
+        int newHtml = sc.nextInt();
+        int beforeHtml = student.getHtml();
+        int result = beforeHtml + newHtml;
+
+        while (result > Student.MAX_VALUE || result < Student.MIN_VALUE) {
+            System.out.println("최대 점수는 100점입니다. 최소 점수는 0점입니다");
+
+            System.out.println("현재 점수 :" + student.getHtml() + "/ 최종결과" + result);
+
+            System.out.print("점수를 다시 입력하세요");
+            newHtml = sc.nextInt();
+            result = beforeHtml + newHtml;
+        }
+        student.setHtml(result);
+    }
+
+    /**
+     * 매개 변수로 두 Student 받고 Java 점수 비교
+     *
+     * @param student1
+     * @param student2
+     * @return 비교결과 문자열로 반환
+     */
+    private String compareJava(Student student1, Student student2) {
+        if (student1 == null || student2 == null) return "등록된 학생의 정보 조회X";
+        if (student1.getJava() == student2.getJava()) return "학생의 점수가 같습니다.";
+        else if (student1.getJava() > student2.getJava()) return student1.getName() + "의 점수가 더 높습니다.";
+        else return student2.getName() + "의 점수가 더 높습니다.";
+    }
+
+    /**
+     * 매개 변수로 두 Student 받고 HTML 점수 비교
+     *
+     * @param student1
+     * @param student2
+     * @return 비교결과 문자열로 반환
+     */
+    private String compareHtml(Student student1, Student student2) {
+        if (student1 == null || student2 == null) return "등록된 학생의 정보 조회X";
+        if (student1.getHtml() == student2.getHtml()) return "학생의 점수가 같습니다.";
+        else if (student1.getHtml() > student2.getHtml()) return student1.getName() + "의 점수가 더 높습니다.";
+        else return student2.getName() + "의 점수가 더 높습니다.";
     }
 }
