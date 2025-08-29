@@ -34,7 +34,7 @@ public class PracticeRun {
 
         // 문제 3 카페 주문 관리 시스템
         System.out.println("\n=== 문제 3: 카페 주문 관리 테스트 ===");
-/*
+
         CafeOrder order1 = new CafeOrder();
         order1.setCustomerName("김자바");
         order1.setMenuItem("아메리카노");
@@ -52,30 +52,22 @@ public class PracticeRun {
         System.out.println("현재 총 주문수: " + CafeOrder.totalOrders + "건");
         System.out.println("현재 총 매출: " + String.format("%,d", CafeOrder.totalSales) + "원");
 
-        //문제 5
-        System.out.println("\n=== 문제 5: 게임 캐릭터 테스트 ===");
+        // 문제 4 계산기 테스트
+        System.out.println("\n=== 문제 4: 계산기 테스트 ===");
 
-        GameCharacter warrior = new GameCharacter("전사왕");
-        GameCharacter mage = new GameCharacter("마법사", 3, 150, 120, 500);
 
-        System.out.println("총 생성된 캐릭터 수: " + GameCharacter.totalCharacters + "명\n");
+        System.out.println("두 정수 합: " + Calculator.calculate(10, 5));
+        System.out.println("두 실수 합: " + Calculator.calculate(5.5, 5.2));
+        System.out.println("사칙연산 (10 + 5): " + Calculator.calculate(10, 5, "+"));
+        System.out.println("사칙연산 (10 - 5): " + Calculator.calculate(10, 5, "-"));
+        System.out.println("사칙연산 (10 * 5): " + Calculator.calculate(10, 5, "*"));
+        System.out.println("사칙연산 (10 / 5): " + Calculator.calculate(10, 5, "/"));
 
-        warrior.showStatus();
-        System.out.println();
-
-        warrior.gainExp(800);
-        warrior.gainExp(500);
-        System.out.println();
-
-        warrior.showStatus();
-        System.out.println();
-
-        warrior.attack();
-        warrior.attack("스킬공격");
-        warrior.attack("스킬공격");
-        warrior.attack("스킬공격"); */
+        int[] numbers = {10, 20, 25};
+        System.out.println("배열 합계: " + Calculator.calculate(numbers));
+        Calculator.calculate(); // 기본 실행
     }
-
-
 }
+
+
 
