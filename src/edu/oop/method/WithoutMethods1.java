@@ -1,6 +1,6 @@
 package edu.oop.method;
 
-public class WithoutMethod1 {
+public class WithoutMethods1 {
     static String url = "https://www.google.com";
 
     public class WithoutMethods {
