@@ -89,18 +89,27 @@ public class LibraryService {
                         System.out.println("다시 입력하세요 값의 범위는 1~3입니다.");
                         return;
                     }
-
                     break;
-
                 case 6: // 도서관 입장/퇴장
                     System.out.println("1=입장 / 2=퇴장");
                     System.out.print("선택: ");
-                    // enterLibrary() 또는 exitLibrary() 메서드 호출
+                    select = sc.nextInt();
+                    if (select == 1) enterLibrary();
+                    else if (select == 2) exitLibrary();
+                    else {
+                        System.out.println("다시 입력하세요 값의 범위는 1~2입니다.");
+                        return;
+                    }
                     break;
 
                 case 7: // 도서관 통계 확인
                     System.out.println("=== 도서관 운영 통계 ===");
-                    // static 변수들과 상수들 출력
+                    System.out.println("전체 회원 수 : " + LibraryMember.totalMemberCount + "명");
+                    System.out.println("현재 방문자 수 : " + LibraryMember.currentVisitorCount + "명");
+                    System.out.println("도서관 이름 : " + LibraryMember.LIBRARY_NAME);
+                    System.out.println("도서관 운영 시간 : " + LibraryMember.OPENING_HOURS);
+                    System.out.println("최대 대출 권수 : " + LibraryMember.MAX_BORROW_BOOKS);
+                    System.out.println("최소 가입 연력 : " + LibraryMember.MIN_AGE_LIMIT);
                     break;
             }
         }
@@ -115,7 +124,11 @@ public class LibraryService {
         String phoneNumber = sc.next();
         System.out.print("멤버 나이 입력 :");
         int age = sc.nextInt();
-
+        if (age < LibraryMember.MIN_AGE_LIMIT) {
+            System.out.println(LibraryMember.MIN_AGE_LIMIT + "이하이므로 가입 불가");
+            return null;
+        }
+        LibraryMember.totalMemberCount++;
         return new LibraryMember(membershipId, memberName, phoneNumber, age);
     }
 
@@ -165,9 +178,19 @@ public class LibraryService {
     }
 
     private void enterLibrary() {
+        System.out.print("입장할 고객의 정보를 작성하세요");
+        String name = sc.next();
+
+        LibraryMember.currentVisitorCount++;
+        System.out.println(name + "님이 도서관에 입장");
     }
 
     private void exitLibrary() {
+        System.out.print("퇴장할 고객의 정보를 작성하세요");
+        String name = sc.next();
+
+        LibraryMember.currentVisitorCount--;
+        System.out.println(name + "님이 도서관에 입장");
     }
 
 
