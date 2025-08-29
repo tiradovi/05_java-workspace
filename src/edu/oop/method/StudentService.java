@@ -78,9 +78,9 @@ public class StudentService {
         System.out.print("이름: ");
         String createName = sc.next();
         System.out.print("학번: ");
-        int createNumber = sc.nextInt();
+        String createNumber = sc.next();
         System.out.print("성별(남/여): ");
-        String createGender = sc.next();
+        char createGender = sc.next().charAt(0);
         // sc.next().charAt(0); sc.next()로 입력받은 문자열 중에서
         // 0번째 인덱스 문자를 createGender에 삽입
         return new Student(createName, createNumber, createGender);
