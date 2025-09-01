@@ -35,6 +35,14 @@ class Cat extends Animal {
         System.out.println(getName() + "이(가) 네 발로 조용히 걸어다닙니다.");
     }
 
+    @Override
+    public void showInfo() {
+        super.showInfo();
+        System.out.println("실내묘 여부 : " + (isIndoor() ? ("실내묘") : ("실외묘")));
+        System.out.println("=====================");
+        System.out.println();
+    }
+
     public void purr() {
         System.out.println(getName() + "이(가) 골골 소리를 냅니다!");
     }

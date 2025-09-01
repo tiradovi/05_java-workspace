@@ -59,8 +59,6 @@ public class Animal {
         System.out.println("이름 : " + getName());
         System.out.println("나이 : " + getAge());
         System.out.println("색깔 : " + getColor());
-        System.out.println("===============");
-        System.out.println();
 
     }
 

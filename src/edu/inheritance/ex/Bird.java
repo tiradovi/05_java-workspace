@@ -34,6 +34,14 @@ class Bird extends Animal {
         System.out.println(getName() + "이(가) 날아다닙니다.");
     }
 
+    @Override
+    public void showInfo() {
+        super.showInfo();
+        System.out.println("날개 길이 : " + getWingspan());
+        System.out.println("=====================");
+        System.out.println();
+    }
+
     public void fly() {
         System.out.println(getName() + "이(가) 높이 날아오릅니다!");
     }

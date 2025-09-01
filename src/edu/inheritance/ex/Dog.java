@@ -35,6 +35,14 @@ class Dog extends Animal {
         System.out.println(getName() + "이(가) 네 발로 뛰어다닙니다.");
     }
 
+    @Override
+    public void showInfo() {
+        super.showInfo();
+        System.out.println("품종 : " + getBreed());
+        System.out.println("=====================");
+        System.out.println();
+    }
+
     public void wagTail() {
         System.out.println(getName() + "이(가) 꼬리를 흔듭니다!");
     }
