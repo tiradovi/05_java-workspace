@@ -1,4 +1,4 @@
-package edu.inheritance.ex;
+package edu.inheritance.ex1;
 
 /**
  * 동물 클래스 상속 실습 문제

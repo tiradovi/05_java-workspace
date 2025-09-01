@@ -1,4 +1,4 @@
-package edu.inheritance.ex;
+package edu.inheritance.ex1;
 
 // 생성자를 만들어주지 않은 경우 에러 발생 부모의 필드를 활용할 수있는 생성자가 존재하지 않기 때문
 class Cat extends Animal {
