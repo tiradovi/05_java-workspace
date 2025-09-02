@@ -1,4 +1,4 @@
-package edu.inheritance;
+package edu.inheritance.ex0;
 
 public class 회사프로그램실행 {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package edu.inheritance;
+package edu.inheritance.ex0;
 // 상속 : 부모의 코드를 물려 받아 자식이 자신의 것처럼 활용
 
 // 상속 키워드 : extends (확장하다)

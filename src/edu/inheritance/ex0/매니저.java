@@ -1,4 +1,4 @@
-package edu.inheritance;
+package edu.inheritance.ex0;
 
 public class 매니저 extends 직원 {
     private int teamSize;
