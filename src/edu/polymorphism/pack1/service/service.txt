@@ -1,0 +1,6 @@
+#service.txt
+
+모델에 작성된 class = 문서별
+
+필드와 메서드(생성자, getter, setter, toString, Object클래스에 작성된 기능...)를
+활용하여 회사에서 필요한 기능들을 작성하는 폴더

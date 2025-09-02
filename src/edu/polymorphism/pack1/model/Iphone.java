@@ -1,4 +1,4 @@
-package edu.polymorphism.pack1;
+package edu.polymorphism.pack1.model;
 
 public class Iphone extends SmartPhone {
     private int iosVersion;

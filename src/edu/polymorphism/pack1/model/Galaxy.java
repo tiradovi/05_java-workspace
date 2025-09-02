@@ -1,4 +1,4 @@
-package edu.polymorphism.pack1;
+package edu.polymorphism.pack1.model;
 
 public class Galaxy extends SmartPhone {
 
