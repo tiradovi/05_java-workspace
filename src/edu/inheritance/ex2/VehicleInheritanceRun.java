@@ -43,30 +43,37 @@ public class VehicleInheritanceRun {
 
         // ============== 문제 4: 교통수단 정보 출력 ==============
         // 모든 교통수단의 기본 정보를 showInfo() 메소드로 출력하세요.
+        Vehicle[] Vehicles = {car1, motorcycle1, bike1, bike2};
 
-        System.out.println("=== 교통수단 정보 ===");
         // 여기에 코드 작성
-        car1.showInfo();
-        motorcycle1.showInfo();
-        bike1.showInfo();
-        bike2.showInfo();
+        for (Vehicle info : Vehicles) {
+            System.out.println("=== 교통수단 정보 ===");
+            info.showInfo();
+            System.out.println("\n=== 시동 걸기 ===");
+            info.start();
+            System.out.println("\n=== 정지하기 ===");
+            info.stop();
+        }
+//        car1.showInfo();
+//        motorcycle1.showInfo();
+//        bike1.showInfo();
+//        bike2.showInfo();
 
         // ============== 문제 5: 공통 행동 테스트 ==============
         // 모든 교통수단이 시동을 걸고 정지하는 행동을 해보세요. (start, stop 메소드)
 
-        System.out.println("\n=== 시동 걸기 ===");
-        // 여기에 코드 작성
-        car1.start();
-        motorcycle1.start();
-        bike1.start();
-        bike2.start();
 
-        System.out.println("\n=== 정지하기 ===");
         // 여기에 코드 작성
-        car1.stop();
-        motorcycle1.stop();
-        bike1.stop();
-        bike2.stop();
+//        car1.start();
+//        motorcycle1.start();
+//        bike1.start();
+//        bike2.start();
+
+        // 여기에 코드 작성
+//        car1.stop();
+//        motorcycle1.stop();
+//        bike1.stop();
+//        bike2.stop();
 
         // ============== 문제 6: 오버라이딩된 메소드 테스트 ==============
         // 각 교통수단의 고유한 가속과 제동 방식을 확인하세요.

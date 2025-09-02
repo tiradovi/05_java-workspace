@@ -4,7 +4,7 @@ import edu.polymorphism.pack1.model.Galaxy;
 import edu.polymorphism.pack1.model.Iphone;
 import edu.polymorphism.pack1.model.SmartPhone;
 
-public class PloyService {
+public class PolyService {
     //필드
     // 자료형 공간이름 = 공간을 설정할 때 공간 내에 들어올 수 있는 데이터를 Iphone 형태만 가능하도록 설정
     // 아이폰 전용 집 집이름 = 아이폰이 사는것
@@ -50,7 +50,7 @@ public class PloyService {
         SmartPhone 스마트폰3번 = new SmartPhone();
 
         SmartPhone[] 스마트폰공장1 = {스마트폰1번, 스마트폰2번, 스마트폰3번};
-        SmartPhone[] 스마트폰공장2 = new SmartPhone[4];
+        SmartPhone[] 스마트폰공장2 = new SmartPhone[3];
         // 스마트폰 4대에 대한 정보를 sps라는 공간에 한번에 넣어줄 수 있다.
         스마트폰공장2[0] = 스마트폰1번;
         스마트폰공장2[1] = 스마트폰2번;
@@ -59,6 +59,15 @@ public class PloyService {
         스마트폰공장2[0].setDisplay("아이폰 14 디스플레이");
         스마트폰공장2[1].setDisplay("갤럭시 S23 디스플레이");
         스마트폰공장2[2].setDisplay("파이폰 디스플레이");
+        /* 공간크기가 더있거나 빈공간이 존재하면 nullpointerException
+        스마트폰공장2[0] = 스마트폰1번;
+        스마트폰공장2[1] = 스마트폰2번;
+        스마트폰공장2[2] = 스마트폰3번;
+
+        스마트폰공장2[0].setDisplay("아이폰 14 디스플레이");
+        스마트폰공장2[1].setDisplay("갤럭시 S23 디스플레이");
+        스마트폰공장2[2].setDisplay("파이폰 디스플레이");
+         */
 
         // 스마트폰 공장내에 존재하는 스마트폰들의 정보를 for문활용하여 출력
         for (SmartPhone 기기확인 : 스마트폰공장2) {
