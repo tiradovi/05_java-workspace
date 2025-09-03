@@ -4,7 +4,7 @@ package edu.polymorphism.pack2.ex1;
 부모 클래스
 일반 회원, Vip회원
  */
-public class Member {
+public abstract class Member {
     // 필드 인스턴스변수 속성
     protected String memberId;
     protected String memberName;
@@ -60,4 +60,6 @@ public class Member {
     // 비추상 클래스에 추상 메서드가 있습니다 
     // -> public 과 class 사이에 abstract가 존재하지 않는데 추상메서드를 사용하는 경우
     public abstract double 할인율();
+
+    public abstract void 쿠폰과혜택();
 }
