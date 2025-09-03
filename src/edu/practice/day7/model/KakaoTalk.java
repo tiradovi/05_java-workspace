@@ -70,27 +70,16 @@ public class KakaoTalk extends KakaoService {
     }
 
     public void sendMessage(String friendName, String message) {
-        if (!"TALK".equals(getServiceType())) {
-            System.out.println("카카오톡 서비스가 아닙니다!");
-            return;
-        }
         System.out.println(friendName + "에게 메시지 전송: " + message);
     }
 
     public void addFriend(String friendName) {
-        if (!"TALK".equals(getServiceType())) {
-            System.out.println("카카오톡 서비스가 아닙니다!");
-            return;
-        }
+
         this.friendCount++;
         System.out.println(friendName + "를 친구로 추가했습니다. (총 친구 수: " + friendCount + ")");
     }
 
     public void changeStatus(boolean online) {
-        if (!"TALK".equals(getServiceType())) {
-            System.out.println("카카오톡 서비스가 아닙니다!");
-            return;
-        }
         this.isOnline = online;
         System.out.println("상태를 " + (online ? "온라인" : "오프라인") + "으로 변경했습니다.");
     }

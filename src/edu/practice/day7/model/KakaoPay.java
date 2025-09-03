@@ -6,11 +6,12 @@ public class KakaoPay extends KakaoService {
 
     public KakaoPay() {
         super();
+        this.balance = 0;
+        this.bankAccount = "";
     }
 
     public KakaoPay(String serviceName, String userId, String userNickname) {
         super(serviceName, userId, userNickname, true);
-
     }
 
     public KakaoPay(String serviceName, String userId, String userNickname, int balance, String bankAccount) {
