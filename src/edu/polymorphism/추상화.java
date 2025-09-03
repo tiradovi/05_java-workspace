@@ -20,7 +20,7 @@ public abstract class 파일이름 {
 public abstract class 추상화 {
 
 
-    // 필드는 작성해도 되고 안해도 된다.
+    // 필드는 작성해도 되고 안해도 된다.!
     //접근제어자   추상화    리턴유무       메서드명칭();
     public abstract void info();
 
