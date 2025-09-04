@@ -3,6 +3,7 @@ package edu.collection.pack1.service;
 import edu.collection.pack1.model.Book;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -110,7 +111,8 @@ public class ListService {
     public void method3() {
         //while 이용해서 도서 추가, 전체 조회, 종료
 
-        List<Book> bookList = new ArrayList<Book>();
+        //   List<Book> bookList = new ArrayList<Book>();
+        List<Book> bookList = new LinkedList<>();
         Scanner sc = new Scanner(System.in);
         int input = 0;
 
