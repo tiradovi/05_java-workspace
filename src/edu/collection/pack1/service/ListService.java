@@ -1,7 +1,10 @@
 package edu.collection.pack1.service;
 
+import edu.collection.pack1.model.Book;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class ListService {
     // List : 자료를 순차적으로 나열한 자료 구조
@@ -85,5 +88,35 @@ public class ListService {
         String target = stringList.remove(0);
         System.out.println(target);
         System.out.println(stringList);
+    }
+
+    /*
+    List : 목록에 관한 컬렉션
+    ArrayList : 배열 형태 리스트
+    장점: 검색 빠름
+    단점: 중간삽입,제거 느림
+    예시 : 학생 성적 관리(조회가 많은 경우)
+           게시판 목록(순서대로 보기)
+           설정 값 저장(가끔 수정)
+           대부분의 일반적 상황     
+    
+    LinkedList : 서로 연결된 링크 형태의 리스트 (기차)
+    장점: 중간 삽입, 제거 빠름
+    단점: 검색 느림
+    예시 : 음악 플레이리스트 (중간에 곡 삽입/ 삭제)
+           실행 취소 기능 (앞 뒤로 이동)
+           대기열 관리 (앞에서 빼고 뒤에서 넣기)
+     */
+    public void method3() {
+        //while 이용해서 도서 추가, 전체 조회, 종료
+
+        List<Book> bookList = new ArrayList<Book>();
+        Scanner sc = new Scanner(System.in);
+        int input = 0;
+
+        while (true) {
+            
+        }
+
     }
 }
