@@ -115,7 +115,51 @@ public class ListService {
         int input = 0;
 
         while (true) {
-            
+            System.out.println("""
+                    😀도서관리시스템😀
+                    1️⃣ 추가
+                    2️⃣ 전체 조회
+                    0️⃣ 종료
+                    """);
+            System.out.println("메뉴 번호 입력 ➡️");
+            input = sc.nextInt();
+            sc.nextLine(); // 개행문자 제거
+
+            switch (input) {
+                case 0:
+                    System.out.println("도서 프로그램 종료");
+                    return;
+                case 1:
+                    System.out.println("도서 추가");
+                    System.out.print("제목을 입력하세요: ");
+                    String title = sc.nextLine();
+                    System.out.print("저자를 입력하세요: ");
+                    String writer = sc.nextLine();
+                    System.out.print("가격을 입력하세요: ");
+                    int price = sc.nextInt();
+                    sc.nextLine();
+
+                    // int String boolean 이외 모든것을 담을 수 있음
+                    // List<Book> -> 담을수 있는 데이터를
+                    // Book class 책 문서 형태의 데이터들로 이루어진 것만 담도록
+                    // 추가 제약
+                    bookList.add(new Book(title, writer, price));
+                    break;
+                case 2:
+                    if (bookList.size() > 0) {
+                        System.out.println("전체 도서 목록 조회");
+                        // bookList 공간에 저장된 책 조회하기
+                        for (Book book : bookList) {
+                            System.out.println(book);
+                        }
+                    } else {
+                        System.out.println("도서 미존재");
+                    }
+
+                    break;
+                default:
+                    System.out.println("잘못 입력");
+            }
         }
 
     }
