@@ -19,9 +19,19 @@ public class ExceptionEx3 {
             int result = 1;
             if (result == 1) {
                 throw new RuntimeException(); // 빨간 줄 안뜸
+
+                //throw new IOException(); // 빨간 줄 뜸
+                //try- catch
             }
         }
     }
 
+    public void method2() {
+        int result = 101;
+        if (result > 100) {
+            throw new 개발자Exception();
+        }
+
+    }
 
 }
