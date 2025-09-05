@@ -7,6 +7,4 @@ public class WrapperRun {
         JavaAPIService javaAPIService = new JavaAPIService();
         javaAPIService.method1();
     }
-
-
 }
