@@ -42,31 +42,31 @@ public class PracticeRun {
         pm.displayAllProducts();
     }
 
-//    public void memberPointManager() {
-//        System.out.println("\n=== MemberPointManager 테스트 ===");
-//
-//        MemberPointManager mpm = new MemberPointManager();
-//
-//        System.out.println("--- 초기 회원 목록 ---");
-//        mpm.displayAllMembers();
-//
-//        System.out.println("\n--- 신규 회원 등록 테스트 ---");
-//        mpm.registerMember("user04");
-//        mpm.registerMember("user01"); // 중복 테스트
-//
-//        System.out.println("\n--- 포인트 적립 테스트 ---");
-//        mpm.earnPoints("user01", 500);
-//        mpm.earnPoints("user99", 100); // 없는 회원
-//
-//        System.out.println("\n--- 포인트 사용 테스트 ---");
-//        mpm.usePoints("user02", 1000);
-//        mpm.usePoints("user02", 1000); // 포인트 부족 테스트
-//
-//        System.out.println("\n--- 최종 회원 목록 ---");
-//        mpm.displayAllMembers();
-//    }
-//
-//
+    public void memberPointManager() {
+        System.out.println("\n=== MemberPointManager 테스트 ===");
+
+        MemberPointManager mpm = new MemberPointManager();
+
+        System.out.println("--- 초기 회원 목록 ---");
+        mpm.displayAllMembers();
+
+        System.out.println("\n--- 신규 회원 등록 테스트 ---");
+        mpm.registerMember("user04");
+        mpm.registerMember("user01"); // 중복 테스트
+
+        System.out.println("\n--- 포인트 적립 테스트 ---");
+        mpm.earnPoints("user01", 500);
+        mpm.earnPoints("user99", 100); // 없는 회원
+
+        System.out.println("\n--- 포인트 사용 테스트 ---");
+        mpm.usePoints("user02", 1000);
+        mpm.usePoints("user02", 1000); // 포인트 부족 테스트
+
+        System.out.println("\n--- 최종 회원 목록 ---");
+        mpm.displayAllMembers();
+    }
+
+
 //    public void informationManagementSystem() {
 //        System.out.println("\n=== 종합 정보 관리 시스템 시뮬레이션 ===");
 //
@@ -103,7 +103,7 @@ public class PracticeRun {
 //
 //        System.out.println("\n정보 관리 시스템 업무 완료");
 //    }
-//
+
 //    public void allSystemsIntegration() {
 //        System.out.println("\n=== 통합 시스템 운영 ===");
 //
