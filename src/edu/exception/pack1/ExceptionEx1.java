@@ -3,6 +3,25 @@ package edu.exception.pack1;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * 예외 발생 구문을 try-catch 로 처리
+ * try{}: 문제가 발생할 것 같은 가능성이 있는 코드를 시도하는 구문
+ * catch(예외){} : try구문중 (예외)와 같은 예외가 발생된 경우 catch에 작성된 구문 실행
+ * 여러개 작성 가능
+ * catch(특정1 예외사항){
+ * 특정 1 예외 상황 발생시 대처해야하는 기능
+ * }
+ * catch(특정2 예외사항){
+ * 특정 2 예외 상황 발생시 대처해야하는 기능
+ * }catch(Exception e){
+ * 개발자가 확인하지 못한 상황 확인후 기능 추가 예정
+ * 즉 대처보다는 문제환경을 개발자에게 전달
+ * }
+ * <p>
+ * <p>
+ * finally: 마지막에 반드시 수행해야하는 구문 try구문에서 예외발생 여부 관계없이 실행
+ *
+ */
 public class ExceptionEx1 {
     /*
     Exception : 코드로 처리 가능한 에러
