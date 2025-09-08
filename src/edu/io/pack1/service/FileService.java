@@ -160,11 +160,14 @@ public class FileService {
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 간단히 날짜형식 지정
             String date = simpleDateFormat.format(lastModified); // 날짜 변환
             String type;//파일 유형
-            if (file.isFile()) {
-                type = "file";
-            } else {
-                type = "folder";
-            }
+
+            if (file.isFile()) type = "file";
+            else type = "folder";
+
+            String size = file.length() + "B";
+            if (file.isDirectory()) size = "";
+
+            System.out.printf("%-20s %-20s %-5s %10s\n", name, date, type, size);
 
         }
     }
