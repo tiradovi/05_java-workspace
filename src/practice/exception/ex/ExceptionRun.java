@@ -6,6 +6,7 @@ public class ExceptionRun {
         //exceptionService.method1();
         //exceptionService.method2();
         //exceptionService.method3();
-        exceptionService.method4();
+        //exceptionService.method4();
+        exceptionService.method5();
     }
 }

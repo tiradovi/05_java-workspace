@@ -1,5 +1,6 @@
 package practice.exception.ex;
 
+import java.io.File;
 import java.util.Scanner;
 
 public class ExceptionService {
@@ -73,5 +74,37 @@ public class ExceptionService {
         } catch (StringIndexOutOfBoundsException e) {
             System.out.println("file 이름 내에 .이 존재하지 않습니다.");
         }
+    }
+
+    public void method5() {
+        String DBID = "user1";
+        String DBPW = "pass1";
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("ID : ");
+        String UserId = sc.nextLine();
+        System.out.print("PW : ");
+        String UserPw = sc.nextLine();
+        try {
+            if (!DBID.equals(UserId)) {
+            /*
+            sout은 확인
+            throw new 가 기능 정지
+             */
+                throw new UserNotFoundException();
+            }
+            if (!DBPW.equals(UserPw)) {
+                throw new InvalidPasswordException();
+            }
+            System.out.println(UserId + "님이 로그인");
+        } catch (UserNotFoundException e) {
+            e.printStackTrace();
+        } catch (InvalidPasswordException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("개발자가 모르는 문제 발생");
+            File log = new File("log.txt");
+        }
+
     }
 }
