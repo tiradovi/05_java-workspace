@@ -10,7 +10,7 @@ public class PracticeRun {
         BankAccountManager manager2 = new BankAccountManager();
         StoreInventoryManager manager3 = new StoreInventoryManager();
         //  manager1.method1();
-        manager2.method2();
-        // manager3.method3();
+        //  manager2.method2();
+        manager3.method3();
     }
 }

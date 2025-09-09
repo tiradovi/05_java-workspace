@@ -3,6 +3,9 @@ package practice.exception.ex;
 import java.io.File;
 import java.util.Scanner;
 
+// 스캐너로 ArrayList 이용해서 숫자값 입력받고 입력받은 숫자값의 총길이나
+// 계산을 구하는 프로그램
+// 상황에 맞는 예외처리
 public class ExceptionService {
     public void method1() {
         int a = 10;
