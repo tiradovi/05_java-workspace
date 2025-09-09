@@ -1,6 +1,8 @@
 package edu.io.pack3.service;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 public class FileService3 {
 
@@ -33,6 +35,22 @@ public class FileService3 {
             }
         }
 
+
+    }
+
+    public void 현대방식() {
+        Path path = Path.of("files", "파일2.txt");
+        if (!Files.exists(path)) {
+            System.out.println("파일 없음");
+            return;
+        }
+
+        try {
+            String content = Files.readString(path);
+            System.out.println(content);
+        } catch (IOException e) {
+            System.out.println("파일 읽기중 오류");
+        }
 
     }
 }
