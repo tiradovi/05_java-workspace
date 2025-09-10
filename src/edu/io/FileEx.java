@@ -131,4 +131,62 @@ public class FileEx {
     Collections.reverse(list);
     */
 
+    /*
+
+       Paths.get()   : 1개 이상의 문자열 작성
+                        , 를 이용하여 여러 경로 요소를 조합 가능
+                      Java11 버전부터는 Path.of() 사용 권장
+       Path.of()    : 1개 이상의 문자열 작성
+                      더 간결한 문법 사용
+       Path.getParent() = C://파일경로1번/파일경로2번/파일경로3번
+                          파일이름.txt 전 모~든 경로를 가져오는 기능
+       Path.getFileName() = 파일경로 이외에 [파일명칭.확장자이름] 만 가지고 오는 기능
+
+       Path.toAbsolutePath() = 절대 경로 반환
+
+       Path.getNameCount()  = 파일위치에 도달하기 까지 몇개의 / 를 거치는가? 경로 갯수 세는것
+       int nameCount    = path.getNameCount(); //파일이름 전까지 슬래시 개수로 폴더 개수 가져옴
+       Path.getName(1) : index 상 파일경로1번 들어옴
+       Path.getName(0) : index 상     C:     들어옴
+
+
+
+       Files 클래스 주요 메서드
+       파일 복사 / 이동 / 삭제
+       Files.copy(Path.of("원본파일경로/원본파일이름.확장자이름"),Path.of("복사해놓을파일경로/복사본파일이름.확장자이름"));
+       Files.copy(Path.of("원본파일경로/원본파일이름.확장자이름"),Path.of("복사해놓을파일경로/복사본파일이름.확장자이름"), StandardCopyOption.REPLACE_EXISTING);
+
+       Files.move(Path.of("원본파일경로/원본파일이름.확장자이름"),Path.of("이동해놓을파일경로/(선택적으로변경)파일이름.확장자이름"));
+       Files.move(Path.of("원본파일경로/원본파일이름.확장자이름"),Path.of("이동해놓을파일경로/(선택적으로변경)파일이름.확장자이름"), StandardCopyOption.REPLACE_EXISTING);
+                                                                                                                 파일이동할 때 덮어쓰기 형태로 파일이동
+
+       Files.delete(Path.of("경로/파일이름.확장자이름"));          -> 파일삭제하는데 삭제 못하면 예외 발생
+       Files.deleteIfExists(Path.of("경로/파일이름.확장자이름"));  -> 파일삭제하는데 존재하지 않아도 예외 발생하지 않음
+                                                                     파일이 존재하는데 다른 곳에서 파일을 사용중일 경우에는 예외 발생
+
+       Path path = Path.of("C://파일경로1번/파일경로2번/파일경로3번/파일이름.txt");
+
+       Files.createDirectories(path.getParent());
+            .createDirectories()                    -> 파일이름.txt 전 에 존재하는 모든 파일 경로가 없으면 생성
+
+
+       Streaming = 네트워크를 통해 데이터를 특히 오디오나 비디오 같은 미디어를 실시간으로 받아오는 기법
+                        전송하고 재생하는 방식
+
+       Stream     = 데이터의 연속적인 흐름을 나타내는 개념
+                    파일, 네트워크, 메모리 등에서 데이터를 순차적으로 읽고 쓸 때 사용
+
+      Streamer = 인터넷을 통해 데이터의 연속적인 흐름을이용해서 영상/음성 데이터를 실시간으로 흘려 보내는 사람
+
+      Viewer   = 스트리머의 방송을 보는 사람들
+
+      시청자가 스트리머의 방송을 보던 중 갑자기 화면이 정지되더니 버퍼링 중입니다 !!!!!
+
+      버퍼링 중입니다 = 데이터를 가져오는 중입니다.
+
+      Buffer : 데이터를 임시로 저장하는 메모리 영역
+        파일에서는 BufferedReader / BufferedWriter 로 파일읽기 쓰기를 구현
+
+
+     */
 }
