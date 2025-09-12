@@ -62,18 +62,16 @@ public class StringBuilderService {
             }
 
             System.out.print("국어: ");
-            int language = scanner.nextInt();
-            scanner.nextLine();
+            int kor = scanner.nextInt();
             System.out.print("영어: ");
-            int english = scanner.nextInt();
-            scanner.nextLine();
+            int eng = scanner.nextInt();
             System.out.print("수학: ");
             int math = scanner.nextInt();
             scanner.nextLine();
 
-            String dataList = "이름: " + name + "\n국어: " + language + "\n영어: " + english + "\n수학" + math + "\n";
-            double average = (language + english + math) / 3;
-            gradeData.append(dataList + "평균 : " + average + "\n");
+            double average = (kor + eng + math) / 3;
+            String dataList = "이름: " + name + "\n국어: " + kor + "\n영어: " + eng + "\n수학" + math + "평균 : " + average + "\n";
+            gradeData.append(dataList);
         }
 
         try {
@@ -109,7 +107,7 @@ public class StringBuilderService {
             String inOut = scanner.nextLine();
             String pm = inOut.equals("수입") ? "+" : "-";
 
-            String dataList = timestamp + " - " + item + ": " + pm + price + "" + "(" + inOut + ")\n";
+            String dataList = timestamp + " - " + item + ": " + pm + price + "(" + inOut + ")\n";
             accountData.append(dataList);
         }
 
