@@ -85,7 +85,7 @@ public class StringBuilderService {
 
     }
 
-    public void recordCount() {
+    public void recordAccount() {
         Path householdDir = Path.of("household");
         Path accountFile = Path.of("household", "account_book.txt");
         String timestamp = getCurrentTime();
@@ -125,5 +125,90 @@ public class StringBuilderService {
 
     private String getCurrentTime() {
         return LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+    }
+
+    public void registerCustomer() {
+        Path customerDir = Path.of("customers");
+        Path customerFile = Path.of("customers", "customer_list.txt");
+        StringBuilder customerData = new StringBuilder();
+
+        System.out.println("고객 정보를 입력하세요 (exit을 입력하면 저장됩니다)");
+        while (true) {
+            System.out.print("이름: ");
+            String name = scanner.nextLine();
+
+            if (name.equals("exit")) {
+                break;
+            }
+
+            System.out.print("전화번호: ");
+            String number = scanner.nextLine();
+            System.out.print("이메일: ");
+            String email = scanner.nextLine();
+            System.out.print("주소: ");
+            String address = scanner.nextLine();
+
+
+            String dataList = "이름: " + name + "전화번호: " + number + "이메일: " + email + "주소: " + address + "\n";
+            customerData.append(dataList);
+        }
+        try {
+            Files.createDirectories(customerDir);
+
+            if (!Files.exists(customerFile)) {
+                Files.writeString(customerFile, customerData, StandardOpenOption.CREATE);
+                System.out.println("새로운 고객 명단을 생성합니다.");
+            } else {
+                Files.writeString(customerFile, customerData, StandardOpenOption.APPEND);
+                System.out.println("기존 고객 명단을 업데이트합니다.");
+            }
+            System.out.println("고객 명단이 저장되었습니다: " + customerFile.getFileName());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void processOrder() {
+        Path orderDir = Path.of("orders");
+        Path orderFile = Path.of("orders", "order_history.txt");
+        StringBuilder orderData = new StringBuilder();
+        String timestamp = getCurrentTime();
+        int totalAmount = 0;
+        try {
+            Files.createDirectories(orderDir);
+            System.out.println(orderDir + "폴더 생성완료\n");
+
+            System.out.println("메뉴 주문을 입력하세요 (주문완료를 입력하면 저장됩니다)");
+            orderData.append("=== 주문 내역서 ===\n " + "주문시간: " + timestamp);
+            while (true) {
+                System.out.print("메뉴명: ");
+                String menu = scanner.nextLine();
+
+                if (menu.equals("주문완료")) {
+                    break;
+                }
+
+                System.out.print("수량: ");
+                int amount = scanner.nextInt();
+                scanner.nextLine();
+
+                System.out.print("가격: ");
+                int price = scanner.nextInt();
+                scanner.nextLine();
+
+                int amountPrice = (price * amount);
+                totalAmount += amountPrice;
+                String dataList = ", 메뉴: " + menu + ", 수량: " + amount + ", 단가: " + price + ", 총액: " + amountPrice + "원\n";
+                orderData.append(dataList);
+            }
+            orderData.append("전체주문금액: " + totalAmount);
+
+
+            Files.writeString(orderFile, orderData);
+            System.out.println("주문 내역이 저장되었습니다: " + orderFile.getFileName());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }
