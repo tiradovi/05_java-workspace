@@ -10,6 +10,6 @@ public class 직원실행 {
         System.out.println(직원2.toString());
         System.out.println(직원3.toString());
 
-        직원서비스.회사정보();
+        직원서비스.더조은회사정보();
     }
 }
